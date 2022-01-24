@@ -17,58 +17,62 @@
         [
         
             [
-                $squadHome = 
+                'squadHome' => 
                 [
                     'name' => 'Roma',
                     'points' => 30,
                 ],
-                $squadGuest = 
+                'squadGuest' =>
                 [
                     'name' => 'Milan',
                     'points' => 19,
                 ]
             ],
             [
-                $squadHome = 
+                'squadHome' => 
                 [
                     'name' => 'Juve',
-                    'points' => 30,
+                    'points' => 20,
                 ],
-                $squadGuest = 
+                'squadGuest' => 
                 [
                     'name' => 'Atlanta',
-                    'points' => 19,
+                    'points' => 3,
                 ]
             ],
             [
-                $squadHome = 
+                'squadHome' => 
                 [
                     'name' => 'Lazio',
-                    'points' => 30,
+                    'points' => 33,
                 ],
-                $squadGuest = 
+                'squadGuest' => 
                 [
                     'name' => 'Palermo',
-                    'points' => 19,
+                    'points' => 29,
                 ]
             ]
         ];
         
     ?>
+    <?php $cont = 1 ?>
+
     <?php for($x = 0; $x < count($partite); $x++) { ?>
-        <?php $questa_partita = $partita[$x] ?>
+        <?php $questa_partita = $partite[$x] ?>
+        
+        <h2>Partita <?php echo $cont ?> </h2>
 
-        <h2>Partita</h2>
-
-        <span><?php echo $questa_partita.$squadHome['name'] ?></span>
+        <span><?php echo $questa_partita['squadHome']['name'] ?></span>
         <span>-</span>
-        <span><?php echo $squadGuest['name'] ?></span>
+        <span><?php echo $questa_partita['squadGuest']['name'] ?></span>
 
         <span>|</span>
 
-        <span><?php echo $squadHome['points'] ?></span>
+        <span><?php echo $questa_partita['squadHome']['points'] ?></span>
         <span>-</span>
-        <span><?php echo $squadGuest['points'] ?></span>
+        <span><?php echo $questa_partita['squadGuest']['points'] ?></span>
+
+        <?php $cont = $cont + 1 ?>
     <?php } ?> 
 </body>
 </html>
